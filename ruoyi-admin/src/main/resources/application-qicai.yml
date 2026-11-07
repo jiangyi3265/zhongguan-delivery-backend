@@ -1,0 +1,69 @@
+server:
+  port: ${QICAI_SERVER_PORT:8082}
+
+spring:
+  redis:
+    database: ${QICAI_REDIS_DATABASE:15}
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      master:
+        url: ${QICAI_DB_URL:jdbc:mysql://localhost:3306/qicai_delivery?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai}
+        username: ${QICAI_DB_USERNAME}
+        password: ${QICAI_DB_PASSWORD}
+      slave:
+        enabled: false
+        url:
+        username:
+        password:
+      initialSize: 2
+      minIdle: 2
+      maxActive: 20
+      maxWait: 30000
+      connectTimeout: 10000
+      socketTimeout: 30000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      maxEvictableIdleTimeMillis: 900000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      webStatFilter:
+        enabled: false
+      statViewServlet:
+        enabled: false
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: false
+
+token:
+  secret: ${QICAI_TOKEN_SECRET}
+
+qicai:
+  wechat-login:
+    # Enable explicitly only after the additive storefront migration is verified.
+    enabled: ${QICAI_WECHAT_LOGIN_ENABLED:false}
+  wechat-pay:
+    enabled: ${QICAI_WECHAT_PAY_ENABLED:false}
+    app-id: ${QICAI_WECHAT_APP_ID:}
+    app-secret-file: ${QICAI_WECHAT_APP_SECRET_FILE:}
+    merchant-id: ${QICAI_WECHAT_MERCHANT_ID:}
+    merchant-serial-number: ${QICAI_WECHAT_MERCHANT_SERIAL:}
+    private-key-path: ${QICAI_WECHAT_PRIVATE_KEY_PATH:}
+    public-key-path: ${QICAI_WECHAT_PUBLIC_KEY_PATH:}
+    public-key-id: ${QICAI_WECHAT_PUBLIC_KEY_ID:}
+    api-v3-key-file: ${QICAI_WECHAT_API_V3_KEY_FILE:}
+    notify-url: ${QICAI_WECHAT_NOTIFY_URL:}
+  mobile-session-hours: 12
+  sms:
+    dev-mode: ${QICAI_SMS_DEV_MODE:false}
+  upload:
+    max-bytes: 5242880

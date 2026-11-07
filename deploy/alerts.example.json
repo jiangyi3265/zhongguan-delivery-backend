@@ -1,0 +1,6 @@
+{
+  "webhook_url": "",
+  "timeout_seconds": 10,
+  "command_timeout_seconds": 180,
+  "repeat_seconds": 3600
+}

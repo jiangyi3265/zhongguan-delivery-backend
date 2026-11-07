@@ -1,0 +1,111 @@
+######################################################################
+# Build Tools
+
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+######################################################################
+# IDE
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### JRebel ###
+rebel.xml
+
+### NetBeans ###
+nbproject/private/
+build/*
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+######################################################################
+# Others
+*.log
+*.xml.versionsBackup
+*.swp
+
+!*/build/*.java
+!*/build/*.html
+!*/build/*.xml
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+*.local.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+credentials*.txt
+*secret*.local*
+.npmrc
+settings.xml
+application-local.yml
+application-local.yaml
+application-prod.yml
+application-prod.yaml
+application-private.*
+# Generated files and local data
+node_modules/
+dist/
+build/
+target/
+unpackage/
+coverage/
+playwright-report/
+test-results/
+logs/
+*.log
+*.hprof
+*.pid
+__pycache__/
+*.pyc
+.venv/
+venv/
+tmp/
+backups/
+uploads/
+uploadPath/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.sql.gz
+*.dump
+*.sqlite*
+# Editor state
+.idea/
+.vscode/
+.hbuilderx/
+*.iml
+.DS_Store
+Thumbs.db
+*.swp
+project.private.config.json
+
+runtime/

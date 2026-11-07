@@ -1,0 +1,20 @@
+server:
+  address: 127.0.0.1
+  port: 18130
+  forward-headers-strategy: framework
+ruoyi:
+  profile: /www/qicai/shared/uploads
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 16390
+    database: 0
+    password: ${QICAI_REDIS_PASSWORD}
+logging:
+  level:
+    com.ruoyi: info
+swagger:
+  enabled: false
+referer:
+  enabled: true
+  allowed-domains: localhost,127.0.0.1,dingdan.uuok.top,dingdanht.uuok.top,https://servicewechat.com/wx309489fb11166079/
