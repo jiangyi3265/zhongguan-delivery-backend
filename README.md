@@ -58,6 +58,8 @@ java -jar ruoyi-admin/target/ruoyi-admin.jar --spring.profiles.active=qicai
 
 ## 构建与验证
 
+接手现有项目的目录布局、运行数据交接和发布步骤见[二次开发与现有服务器升级](deploy/MAINTENANCE.md)。
+
 ```bash
 mvn clean package
 ```
